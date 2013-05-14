@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!--<title>Ruby on Rails Tutorial Sample App | <%= yield(:title) %></title> -->
+
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <!-- [if lt IE 9] >
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <! [endif] -->
+</head>
+<body>
+<header class="navbar navbar-fixed-top navbar-inverse">
+	<div class="navbar-inner">
+		<div class="container">
+			<%= link_to "Sample app", '#', id:"logo" %>
+			<nav>
+				<ul class="nav pull-right">
+					<li><%= link_to "HOME",		'#' %></li>
+					<li><%= link_to "HELP",		'#' %></li>
+					<li><%= link_to "SIGN IN",	'#' %></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
+<div class="container">
+
+<%= yield %>
+
+</div>
+
+<footer style="background-color:#CCC">
+	<a href="/static_pages/home">HOME</a>
+	<a href="/static_pages/about">ABOUT US</a>
+	<a href="/static_pages/help">HELP</a>
+	<a href="/static_pages/contact">CONTACT</a>
+	<p style="font-size: 0.8em; color: #666;" align="right">©2013 Rails - Sample App</p>
+</footer>
+</body>
+</html>
